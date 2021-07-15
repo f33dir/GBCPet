@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
 
+#myshit
+.idea
+cmake-build-debug
+rom.gbc
+
 # Compiled Object files
 *.slo
 *.lo
