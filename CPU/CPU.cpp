@@ -7,9 +7,6 @@ void CPU::step() {
     switch(state){
         case READ:
             readOpCode();
-            switch(currentInstruction){
-
-            }
             break;
         case EXECUTING:
             MCyclesAmount--;
@@ -23,9 +20,11 @@ void CPU::readOpCode() {
 }
 
 CPU::CPU() {
-
+    A = 0x11;
+    B = 0x00;
 }
 
 void CPU::loadGame(std::ifstream &file) {
     memory->initMemory(file);
 }
+

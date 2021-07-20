@@ -27,12 +27,10 @@ private:
     uint8_t currentInstruction;
 
     bool * mainFlags = new bool[4];// z h n c
-    uint8_t * reg = new uint8_t[7];//A,B,C,D,E,H,L
+    uint8_t A,B,C,D,E,H,L;
 
-    void movePC();
     void readOpCode();
-
-
+    void executeOperation();
 
 };
 

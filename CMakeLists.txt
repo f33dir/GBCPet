@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.17)
 project(Gameboy)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -8,4 +8,4 @@ add_executable(Gameboy main.cpp
                         CPU/CPU.cpp CPU/CPU.h
                         CPU/Memory/Memory.cpp
                         CPU/Memory/Memory.h
-                        CPU/Memory/MemUtils/MemUtils.h)
+                        CPU/Memory/MemUtils/MemUtils.h CPU/CPU_OP.cpp)

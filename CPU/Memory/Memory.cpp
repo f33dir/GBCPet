@@ -9,7 +9,7 @@ uint16_t Memory::getMem16(uint16_t input) {
     return getMem8(input)*0x0100 + getMem8(input+1);
 }
 
-uint8_t Memory::getMem8(uint16_t input) {
+uint8_t& Memory::getMem8(uint16_t input) {
     if(input<0x4000){
         return ROM1[input];
     }
@@ -17,12 +17,7 @@ uint8_t Memory::getMem8(uint16_t input) {
         return ROM2[input-0x4000];
     }
     if(input<0xA000){
-        switch(mbcType){
-            case MBC2:
-                return VRAM[input-0x8000];
-            default:
-                return VRAM[input-0x8000] % 16;
-        }
+        return VRAM[input-0x8000];
     }
     if(input<0xC000){
         return ERAM[input-0xA000];

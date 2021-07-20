@@ -35,7 +35,7 @@ class Memory {
     uint8_t * OAM = new uint8_t[160];
     uint8_t * IO = new uint8_t[128];
     uint8_t * HRAM = new uint8_t[126];
-    uint16_t  IE;
+    uint8_t  IE;
 
     uint8_t BANKMODE = 0;
     uint8_t LOWBANKNUM = 0x01;
@@ -51,7 +51,7 @@ class Memory {
 public:
     Memory(){};
     void initMemory(std::ifstream &file);
-    uint8_t  getMem8(uint16_t);
+    uint8_t&  getMem8(uint16_t);
     uint16_t getMem16(uint16_t);
     int write8(uint8_t value, uint16_t pos);
     int write16();
