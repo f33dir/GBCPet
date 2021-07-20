@@ -14,6 +14,3 @@ void LD_Im(uint8_t & reg, uint8_t value){
     reg = value;
 }
 uint16_t c8to16(uint8_t)
-uint8_t& getMemoryCell(uint8_t){
-
-}

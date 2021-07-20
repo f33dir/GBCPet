@@ -34,9 +34,9 @@ uint8_t& Memory::getMem8(uint16_t input) {
     if(input<0xFEA0){
         return OAM[input-0xFE00];
     }
-    if(input<0xFF00){
-        return '\0';
-    }
+//    if(input<0xFF00){
+//        return ;
+//    }
     if(input<0xFF80) {
         return IO[input-0xFEFF];
     }
