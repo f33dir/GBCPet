@@ -26,12 +26,17 @@ private:
     int MCyclesAmount;
     uint8_t currentInstruction;
 
-    bool * mainFlags = new bool[4];// z h n c
+    bool z,n,h,c;
     uint8_t A,B,C,D,E,H,L;
 
     void readOpCode();
     void executeOperation();
 
+    uint16_t c8to16(uint8_t a, uint8_t b);
+    void LD(uint8_t & target, uint8_t value);
+    void INC8(uint8_t & reg);
+    void INC16(uint16_t & reg);
+    void DEC8
 };
 
 

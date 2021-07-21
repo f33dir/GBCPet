@@ -51,10 +51,8 @@ class Memory {
 public:
     Memory(){};
     void initMemory(std::ifstream &file);
-    uint8_t&  getMem8(uint16_t);
-    uint16_t getMem16(uint16_t);
-    int write8(uint8_t value, uint16_t pos);
-    int write16();
+    uint8_t&  getMem(uint16_t input);
+    int writeMem(uint8_t value, uint16_t pos);
 };
 
 #endif //GAMEBOY_MEMORY_H

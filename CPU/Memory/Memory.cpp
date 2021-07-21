@@ -5,11 +5,8 @@
 #include "Memory.h"
 #include <fstream>
 #include <vector>
-uint16_t Memory::getMem16(uint16_t input) {
-    return getMem8(input)*0x0100 + getMem8(input+1);
-}
 
-uint8_t& Memory::getMem8(uint16_t input) {
+uint8_t& Memory::getMem(uint16_t input) {
     if(input<0x4000){
         return ROM1[input];
     }
@@ -133,7 +130,7 @@ void Memory::initMemory(std::ifstream &filestream ) {
 }
 
 
-int Memory::write8(uint8_t value, uint16_t pos) {
+int Memory::writeMem(uint8_t value, uint16_t pos) {
     if(pos<0x2000){
         switch(mbcType){
             case NOMBC:
@@ -380,6 +377,3 @@ int Memory::write8(uint8_t value, uint16_t pos) {
     }
 }
 
-int Memory::write16() {
-    return 0;
-}

@@ -2,8 +2,10 @@
 #include <fstream>
 int main() {
     std::ifstream rom;
-    rom.open("/home/f33dir/projects/C++/Gameboy/rom.gbc");
+    rom.open("../rom.gbc");
     CPU * cpu = new CPU();
     cpu->loadGame(rom);
+    uint8_t v = 0xFF;
+    v++;
     return 0;
 }

@@ -16,7 +16,7 @@ void CPU::step() {
 }
 
 void CPU::readOpCode() {
-    currentInstruction = memory->getMem8(SP);
+    currentInstruction = memory->getMem(SP);
 }
 
 CPU::CPU() {
